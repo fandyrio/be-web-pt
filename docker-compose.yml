@@ -13,7 +13,7 @@ services:
 
   nginx:
     image: nginx:latest
-    container_name: laravel_nginx
+    container_name: web_pt_nginx
     ports:
       - "8000:80"
     volumes:
