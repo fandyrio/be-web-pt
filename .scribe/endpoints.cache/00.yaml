@@ -31,7 +31,7 @@ endpoints:
         name: username
         description: 'Username user. Used: NIP'
         required: true
-        example: architecto
+        example: consequatur
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -42,15 +42,15 @@ endpoints:
         name: password
         description: 'Password user. Default: NIP'
         required: true
-        example: '|]|{+-'
+        example: 'O[2UZ5ij-e/dl4m{o,'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         deprecated: false
     cleanBodyParameters:
-      username: architecto
-      password: '|]|{+-'
+      username: consequatur
+      password: 'O[2UZ5ij-e/dl4m{o,'
     fileParameters: []
     responses:
       -

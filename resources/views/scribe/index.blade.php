@@ -26,7 +26,7 @@
             </style>
 
     <script>
-        var tryItOutBaseUrl = "http://web_pt.local/public";
+        var tryItOutBaseUrl = "http://localhost:8000";
         var useCsrf = Boolean();
         var csrfUrl = "/sanctum/csrf-cookie";
     </script>
@@ -107,7 +107,7 @@
     <div class="content">
         <h1 id="introduction">Introduction</h1>
 <aside>
-    <strong>Base URL</strong>: <code>http://web_pt.local/public</code>
+    <strong>Base URL</strong>: <code>http://localhost:8000</code>
 </aside>
 <pre><code>This documentation aims to provide all the information you need to work with our API.
 
@@ -136,19 +136,19 @@ You can switch the language used with the tabs at the top right (or from the nav
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://web_pt.local/public/api/login" \
+    "http://localhost:8000/api/login" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"username\": \"architecto\",
-    \"password\": \"|]|{+-\"
+    \"username\": \"consequatur\",
+    \"password\": \"O[2UZ5ij-e\\/dl4m{o,\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://web_pt.local/public/api/login"
+    "http://localhost:8000/api/login"
 );
 
 const headers = {
@@ -157,8 +157,8 @@ const headers = {
 };
 
 let body = {
-    "username": "architecto",
-    "password": "|]|{+-"
+    "username": "consequatur",
+    "password": "O[2UZ5ij-e\/dl4m{o,"
 };
 
 fetch(url, {
@@ -261,10 +261,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="username"                data-endpoint="POSTapi-login"
-               value="architecto"
+               value="consequatur"
                data-component="body">
     <br>
-<p>Username user. Used: NIP Example: <code>architecto</code></p>
+<p>Username user. Used: NIP Example: <code>consequatur</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -273,10 +273,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-login"
-               value="|]|{+-"
+               value="O[2UZ5ij-e/dl4m{o,"
                data-component="body">
     <br>
-<p>Password user. Default: NIP Example: <code>|]|{+-</code></p>
+<p>Password user. Default: NIP Example: <code>O[2UZ5ij-e/dl4m{o,</code></p>
         </div>
         </form>
 
@@ -298,7 +298,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://web_pt.local/public/api/list-citizen/1" \
+    --get "http://localhost:8000/api/list-citizen/1" \
     --header "Authorization: {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -306,7 +306,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://web_pt.local/public/api/list-citizen/1"
+    "http://localhost:8000/api/list-citizen/1"
 );
 
 const headers = {
@@ -325,7 +325,7 @@ fetch(url, {
 
 <span id="example-responses-GETapi-list-citizen--page-">
             <blockquote>
-            <p>Example response (404):</p>
+            <p>Example response (401):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -333,10 +333,11 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
+vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;The route public/api/list-citizen/1 could not be found.&quot;
+    &quot;message&quot;: &quot;Akses terbatas&quot;
 }</code>
  </pre>
     </span>
@@ -452,7 +453,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://web_pt.local/public/api/detil-citizen/xxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" \
+    --get "http://localhost:8000/api/detil-citizen/xxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" \
     --header "Authorization: {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -460,7 +461,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://web_pt.local/public/api/detil-citizen/xxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    "http://localhost:8000/api/detil-citizen/xxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 );
 
 const headers = {
@@ -479,7 +480,7 @@ fetch(url, {
 
 <span id="example-responses-GETapi-detil-citizen--slug-">
             <blockquote>
-            <p>Example response (404):</p>
+            <p>Example response (401):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -487,10 +488,11 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
+vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;The route public/api/detil-citizen/xxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx could not be found.&quot;
+    &quot;message&quot;: &quot;Akses terbatas&quot;
 }</code>
  </pre>
     </span>

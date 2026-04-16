@@ -44,14 +44,12 @@ endpoints:
     responses:
       -
         custom: []
-        status: 404
-        content: |-
-          {
-              "message": "The route public/api/list-citizen/1 could not be found."
-          }
+        status: 401
+        content: '{"message":"Akses terbatas"}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
+          vary: Origin
         description: null
     responseFields: []
     auth:
@@ -102,14 +100,12 @@ endpoints:
     responses:
       -
         custom: []
-        status: 404
-        content: |-
-          {
-              "message": "The route public/api/detil-citizen/xxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx could not be found."
-          }
+        status: 401
+        content: '{"message":"Akses terbatas"}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
+          vary: Origin
         description: null
     responseFields: []
     auth:
