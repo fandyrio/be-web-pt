@@ -1,0 +1,119 @@
+name: 'Admin - Citizen'
+description: ''
+endpoints:
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/list-citizen/{page}'
+    metadata:
+      custom: []
+      groupName: 'Admin - Citizen'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'List Citizen'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: '{YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      page:
+        custom: []
+        name: page
+        description: 'Nomor halaman.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      page: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 404
+        content: |-
+          {
+              "message": "The route public/api/list-citizen/1 could not be found."
+          }
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+        description: null
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer {YOUR_TOKEN}'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/detil-citizen/{slug}'
+    metadata:
+      custom: []
+      groupName: 'Admin - Citizen'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Detil Citizen'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: '{YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      slug:
+        custom: []
+        name: slug
+        description: 'slug diambil dari hasil listcitizen.'
+        required: true
+        example: xxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      slug: xxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 404
+        content: |-
+          {
+              "message": "The route public/api/detil-citizen/xxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx could not be found."
+          }
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+        description: null
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer {YOUR_TOKEN}'
+    controller: null
+    method: null
+    route: null
