@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['https://devfe360.pt-bengkulu.go.id', 'http://localhost:3000', 'http://localhost:3001', 'https://mata360.pt-bengkulu.go.id'],
+    'allowed_origins' => ['*'],
     // 'allowed_origins' => ['http://localhost', 'http://localhost:3000'],
 
     'allowed_origins_patterns' => [],
