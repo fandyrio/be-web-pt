@@ -4,7 +4,7 @@
         'api_cuti_prod'=> 'https://be-cuti.pt-bengkulu.go.id/api',
         'citizen' => [
             'foto' => [
-                'max-size'=> 2048,
+                'max_size'=> 2048,
                 'mimes'=> ['jpg', 'jpeg', 'png']
             ]
         ]

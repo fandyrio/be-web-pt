@@ -23,6 +23,7 @@ class AppServiceProvider extends ServiceProvider
         //
         $this->app['router']->aliasMiddleware('jwt.auth', \App\Http\Middleware\JWTMiddleware::class);
         $this->app['router']->aliasMiddleware('isSuperAdmin', \App\Http\Middleware\isSuperAdmin::class);
+        $this->app['router']->aliasMiddleware('apps_service', \App\Http\Middleware\waSignin::class);
         Route::middleware([
             \Illuminate\Http\Middleware\TrustProxies::class,
             \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,

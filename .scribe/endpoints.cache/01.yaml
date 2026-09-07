@@ -45,7 +45,7 @@ endpoints:
       -
         custom: []
         status: 401
-        content: '{"message":"Akses terbatas"}'
+        content: '{"status":false,"msg":"Invalid Token"}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -101,12 +101,95 @@ endpoints:
       -
         custom: []
         status: 401
-        content: '{"message":"Akses terbatas"}'
+        content: '{"status":false,"msg":"Invalid Token"}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
           vary: Origin
         description: null
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer {YOUR_TOKEN}'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/update-citizen
+    metadata:
+      custom: []
+      groupName: 'Admin - Citizen'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update Citizen'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: '{YOUR_AUTH_KEY}'
+      Content-Type: multipart/form-data
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      riwayat_jabatan:
+        custom: []
+        name: riwayat_jabatan
+        description: ''
+        required: true
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      penghargaan:
+        custom: []
+        name: penghargaan
+        description: ''
+        required: true
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      foto:
+        custom: []
+        name: foto
+        description: 'Must be an image.'
+        required: false
+        example: null
+        type: file
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      token:
+        custom: []
+        name: token
+        description: ''
+        required: true
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      riwayat_jabatan: consequatur
+      penghargaan: consequatur
+      token: consequatur
+    fileParameters:
+      foto: null
+    responses: []
     responseFields: []
     auth:
       - headers

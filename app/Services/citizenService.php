@@ -126,6 +126,25 @@ use Vinkla\Hashids\Facades\Hashids;
 
             return ['status'=>$status, 'msg'=>$msg, 'data'=>$data];
         }
+
+        public function updateCitizen($citizen_id, $filename, $riwayat, $penghargaan){
+            $get_data=Citizen::where('id', $citizen_id)->first();
+            if(is_null($get_data)){
+                return ['status'=>false, 'code'=>404, 'msg'=>'Data tidak ditemukan'];
+            }
+
+            $get_data->riwayat_jabatan = $riwayat;
+            $get_data->penghargaan = $penghargaan;
+            if(!is_null($filename)){
+                $get_data->foto=$filename;
+            }
+            
+            if($get_data->update()){
+                return ['status'=>true, 'code'=>200, 'msg'=>"Berhasil mengubah data Citizen"];
+            }
+            
+            return ['status'=>false, 'code'=>500, 'msg'=>'Terjadi kesalahan sistem saat mengubah data'];
+        }
     }
 
 ?>

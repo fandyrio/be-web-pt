@@ -10,6 +10,12 @@
     Route::middleware(['jwt.auth', 'isSuperAdmin'])->group(function(){
         Route::get('list-citizen/{page}', 'api\citizenController@listCitizen');
         Route::get('detil-citizen/{slug}', 'api\citizenController@getDetilCitizen');
+        Route::post('update-citizen', 'api\citizenController@updateCitizen');
+        Route::get('list-layout', 'api\menuController@getLayout');
+    });
+
+    Route::middleware(['apps_service'])->group(function(){
+        Route::post("v1/send-wa", 'api\waController@sendWa');
     });
     
 ?>

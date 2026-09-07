@@ -6,10 +6,13 @@ services:
       context: .
       dockerfile: docker/php/Dockerfile
     container_name: be_web_pt
+    user: "1000:1000"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     volumes:
       - .:/var/www
-    depends_on:
-      - db
+    #depends_on:
+    #  - db
 
   nginx:
     image: nginx:latest
@@ -22,12 +25,12 @@ services:
     depends_on:
       - app
 
-  db:
-    image: mysql:8.0
-    container_name: web_pt
-    restart: always
-    environment:
-      MYSQL_DATABASE: web_pt
-      MYSQL_ROOT_PASSWORD: root
-    ports:
-      - "3307:3306"
+  # db:
+  #   image: mysql:8.0
+  #   container_name: web_pt
+  #   restart: always
+  #   environment:
+  #     MYSQL_DATABASE: web_pt
+  #     MYSQL_ROOT_PASSWORD: root
+  #   ports:
+  #     - "3307:3306"

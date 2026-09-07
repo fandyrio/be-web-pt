@@ -35,4 +35,10 @@ return [
         ],
     ],
 
+    'wa_env'=>[
+        'key'=>env('SECRET_KEY_WA'),
+        'token'=>env('WA_TOKEN'),
+        'url'=>env('WA_URL')
+    ],
+
 ];

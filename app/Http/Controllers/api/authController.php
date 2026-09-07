@@ -53,14 +53,19 @@ class authController extends Controller
                     return response()->json(['status'=>$status, 'msg'=>$msg, 'token'=>$token])->withCookie((cookie('rft-web-pt', $rft, 60*24*7, '/', null, true, true, false, 'Lax')));
                 }
             }else{
-                $msg="Data tidak ditemukan";
+                $msg="Username dan Password tidak cocok";
             }
         }catch(ValidationException $e){
             $msg=$e->validator->errors()->first();
         }
         return response()->json(['status'=>false, 'msg'=>$msg], 401);
     }
-
+    /**
+     * Login User
+     * @anuathenticated
+     * @group Admin - Authentication
+     * 
+     */
     public function refreshToken(Request $request){
         $cookie=$request->cookie('rft-web-pt');
         try{
